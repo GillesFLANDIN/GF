@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+        <header>
+            <h1>Mon premier PHP</h1>
+        </header>
+        <main>
+            <?php if($animal == null): ?>
+                <p>Je suis bidon</p>
+            <?php else: ?>
+                <p><?= $animal['race'] ?></p>
+            <?php endif; ?>
+            
+            <?php foreach($animal as $key => $value): ?>
+                <p><?= $key.": ".$value ?></p>
+            <?php endforeach; ?>
+            
+            <form action="test.php" method="post">
+                <input type="text" name="nom" size="12" placeholder="nom"><br>
+                <input type="text" name="prenom" size="12" placeholder="prenom">
+                <input type="submit" value="OK">
+            </form>
+            <?php if(empty($_POST)): ?>
+                <p>Aucune valeur</p>
+            <?php else: ?>
+                <p><?= $nom.' '.$prenom ?></p>
+            <?php endif; ?>
+        </main>
+    </body>
+</html>
